@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+import bettaImg from './assets/YLBetta.svg'
+import './css/styles.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  //  const [count, setCount] = useState(0)
+  const [bid, setBid] = useState(0);
+  const [maxBid, setMaxBid] = useState(0);
+  const [maxBider, setMaxBider] = useState("");
+  const [bider, setBider] = useState("");
+  useEffect(() => {
+    let abortController = new AbortController();
+    try {
+
+
+    } catch (error) {
+ 
+    } finally {
+
+    }
+  
+
+    return () => abortController.abort();
+  }, [bid])
+
+
+  const addBid = () => {
+    if (bid !== '' && parseInt(bid) > maxBid) {
+      setMaxBid((maxBid) => bid)
+      setMaxBider((maxBider)=> bider)   
+    }
+    console.log("Bider Name: ", maxBider);
+    console.log("Max price: ", maxBid);
+  }
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <img src="./assets/img/00165-2697548705.png" class="img" />
+                <br></br>
+      <h3>{maxBider} : {maxBid}</h3>
+      <br></br>
+      <h4>Name : </h4><input value={bider} onChange={e => setBider(e.target.value)} />
+      <br></br>
+      <h4>Bid : </h4><input value={bid} onChange={e => setBid(e.target.value)} />
+      <br></br>
+      <button class="submit" onClick={addBid}>Bid</button>
+
     </>
   )
+
+  
+
 }
 
 export default App
