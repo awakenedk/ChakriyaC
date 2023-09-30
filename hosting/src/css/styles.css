@@ -605,7 +605,11 @@ progress {
   max-width: 100%;
   height: auto;
 }
+.skill {
 
+  width: 70%;
+  margin-top: 20%;
+}
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
