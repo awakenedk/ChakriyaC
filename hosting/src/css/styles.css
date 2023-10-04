@@ -605,10 +605,10 @@ progress {
   max-width: 100%;
   height: auto;
 }
-.skill {
+.img-skill {
 
-  width: 70%;
-  margin-top: 20%;
+  width: 100%;
+  padding: 10%;
 }
 .img-thumbnail {
   padding: 0.25rem;
@@ -8313,6 +8313,10 @@ textarea.form-control-lg {
 .bg-dark {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+.bg-green {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-green), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
